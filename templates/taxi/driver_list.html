@@ -2,7 +2,7 @@
 {% block content %}
   {% for driver in driver_list %}
     <ul>
-      <li><a href="{% url 'taxi:drivers-detail' driver.id %}">>First name: {{ driver.first_name }}, Last name: {{ driver.last_name }}, License number{{ driver.license_number }}</a></li>
+      <li><a href="{% url 'taxi:driver-detail' driver.id %}">>First name: {{ driver.first_name }}, Last name: {{ driver.last_name }}, License number{{ driver.license_number }}</a></li>
     </ul>
   {% endfor %}
 {% endblock %}

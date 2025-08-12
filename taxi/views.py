@@ -33,6 +33,12 @@ class CarListView(generic.ListView):
 
 class CarDetailView(generic.DetailView):
     model = Car
+    template_name = "taxi/car_detail.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['car'] = self.object
+        return context
 
 
 class DriverListView(generic.ListView):
@@ -43,3 +49,4 @@ class DriverListView(generic.ListView):
 class DriverDetailView(generic.DetailView):
     model = Driver
     queryset = Driver.objects.prefetch_related("cars__manufacturer")
+    template_name = "taxi/car_detail.html"

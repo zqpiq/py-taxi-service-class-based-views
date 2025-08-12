@@ -37,7 +37,7 @@ class CarDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['car'] = self.object
+        context["car"] = self.object
         return context
 
 

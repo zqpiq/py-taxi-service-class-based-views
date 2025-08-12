@@ -6,6 +6,7 @@
       <tr>
         <th>Model</th>
         <th>Manufacturer</th>
+        <th>Country</th>
         <th>Drivers</th>
       </tr>
     </thead>
@@ -13,11 +14,10 @@
       <tr>
         <td>{{ car.model }}</td>
         <td>{{ car.manufacturer.name }}</td>
+        <td>{{ car.manufacturer.country }}</td>
         <td>
           {% for driver in car.drivers.all %}
             ({{ driver.first_name }} {{ driver.last_name }})
-          {% empty %}
-            No drivers assigned
           {% endfor %}
         </td>
       </tr>
